@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('bonjour', function () {
     echo "Bienvenue à BabyShop_vLaravel";
 });
+
+Route::get('index', [
+    'as'=>'trang-chu',
+    'uses'=>'PageController@getIndex'
+]);
