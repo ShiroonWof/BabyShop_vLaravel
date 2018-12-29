@@ -95,7 +95,7 @@
                         <ul class="sub-menu">
                             <li><a href="product_type">Sản phẩm 1</a></li>
                             <li><a href="product_type">Sản phẩm 2</a></li>
-                            <li><a href="product_type">Sản phẩm 4</a></li>
+                            <li><a href="product_type">Sản phẩm 3</a></li>
                         </ul>
                     </li>
                     <li><a href="about">Giới thiệu</a></li>
