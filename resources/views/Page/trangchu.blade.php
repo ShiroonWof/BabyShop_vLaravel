@@ -29,22 +29,31 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="beta-products-list">
-                        <h4>Hàng Mới</h4>
+                        <h4><b>Sản phẩm đồ chơi mới</b></h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">Các kiểu hàng: </p>
+                            <p class="pull-left">Tìm thấy {{count($new_product_toy)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
 
                         <div class="row">
+                            @foreach($new_product_toy as $new)
                             <div class="col-sm-3">
                                 <div class="single-item">
+                                    @if($new->promotion_price != 0)
+                                        <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                                    @endif
                                     <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/1.jpg" alt=""></a>
+                                        <a href="product"><img src="BabyShop_Interface/image/product/{{$new->image}}" alt="" height="300px"></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Gấu bông</p>
+                                        <p class="single-item-title"><b>{{$new->name}}</b></p>
                                         <p class="single-item-price">
-                                            <span>100.000vnd</span>
+                                            @if($new->promotion_price != 0)
+                                                <span class="flash-del">{{$new->unit_price}}vnđ</span>
+                                                <span class="flash-sale">{{$new->promotion_price}}vnđ</span>
+                                            @else
+                                                <span class="flash">{{$new->unit_price}}vnđ</span>
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
@@ -54,232 +63,56 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
-
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Bạch Tuộc Bông</p>
-                                        <p class="single-item-price">
-                                            <span class="flash-del">100.000vnđ</span>
-                                            <span class="flash-sale">75.000đ</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Voi bông</p>
-                                        <p class="single-item-price">
-                                            <span>100.000vnđ</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Cá bông</p>
-                                        <p class="single-item-price">
-                                            <span>90.000vnđ</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div> <!-- .beta-products-list -->
 
                     <div class="space50">&nbsp;</div>
 
                     <div class="beta-products-list">
-                        <h4>Top Products</h4>
+                        <h4><b>Sản phẩm bánh mới nhất</b></h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">438 styles found</p>
+                            <p class="pull-left">Tìm thấy {{count($new_product_food)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
-
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span class="flash-del">$34.55</span>
-                                            <span class="flash-sale">$33.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
+                            @foreach($new_product_food as $newf)
+                                <div class="col-sm-3">
+                                    <div class="single-item">
+                                        @if($newf->promotion_price != 0)
+                                            <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                                        @endif
+                                        <div class="single-item-header">
+                                            <a href="product"><img src="BabyShop_Interface/image/product/{{$newf->image}}" alt="" height="300px"></a>
+                                        </div>
+                                        <div class="single-item-body">
+                                            <p class="single-item-title"><b>{{$newf->name}}</b></p>
+                                            <p class="single-item-price">
+                                                @if($newf->promotion_price != 0)
+                                                    <span class="flash-del">{{$newf->unit_price}}vnđ</span>
+                                                    <span class="flash-sale">{{$newf->promotion_price}}vnđ</span>
+                                                @else
+                                                    <span class="flash">{{$newf->unit_price}}vnđ</span>
+                                                @endif
+                                            </p>
+                                        </div>
+                                        <div class="single-item-caption">
+                                            <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
+                                            <div class="clearfix"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="space40">&nbsp;</div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
-
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span class="flash-del">$34.55</span>
-                                            <span class="flash-sale">$33.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/assets/dest/images/products/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div> <!-- .beta-products-list -->
                 </div>
             </div> <!-- end section with sidebar and main content -->
+
+
+            <button onclick="" type="button">To top</button>
+            <!-- tạo button click lên top -->
 
 
         </div> <!-- .main-content -->
