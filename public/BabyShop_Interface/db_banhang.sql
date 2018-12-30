@@ -6,7 +6,6 @@
 -- Generation Time: Mar 25, 2017 at 08:34 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -237,10 +236,10 @@ CREATE TABLE `slide` (
 --
 
 INSERT INTO `slide` (`id`, `link`, `image`) VALUES
-(1, '', 'banner1.jpg'),
-(2, '', 'banner2.jpg'),
-(3, '', 'banner3.jpg'),
-(4, '', 'banner4.jpg');
+(1, '', 'slide1.jpg'),
+(2, '', 'slide2.jpg'),
+(3, '', 'slide3.jpg'),
+(4, '', 'slide4.jpg');
 
 -- --------------------------------------------------------
 

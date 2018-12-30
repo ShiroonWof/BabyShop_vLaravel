@@ -23,3 +23,23 @@ Route::get('index', [
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
 ]);
+
+Route::get('loaiSP',[
+    'as'=>'loai-san-pham',
+    'uses'=>'PageController@getLoaiSP'
+]);
+
+Route::get('sanpham',[
+    'as'=>'chi-tiet-san-pham',
+    'uses'=>'PageController@getSP'
+]);
+
+Route::get('lienhe',[
+    'as'=>'lien-he',
+    'uses'=>'PageController@getLienHe'
+]);
+
+Route::get('gioithieu',[
+    'as'=>'gioi-thieu',
+    'uses'=>'PageController@getGioiThieu'
+]);
