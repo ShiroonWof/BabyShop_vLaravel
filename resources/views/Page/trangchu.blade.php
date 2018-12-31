@@ -43,7 +43,7 @@
                                         <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
                                     @endif
                                     <div class="single-item-header">
-                                        <a href="product"><img src="BabyShop_Interface/image/product/{{$new->image}}" alt="" height="300px"></a>
+                                        <a href="{{route('chi-tiet-san-pham',$new->id)}}"><img src="BabyShop_Interface/image/product/{{$new->image}}" alt="" height="300px"></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title"><b>{{$new->name}}</b></p>
@@ -84,7 +84,7 @@
                                             <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
                                         @endif
                                         <div class="single-item-header">
-                                            <a href="product"><img src="BabyShop_Interface/image/product/{{$newf->image}}" alt="" height="300px"></a>
+                                            <a href="{{route('chi-tiet-san-pham',$newf->id)}}"><img src="BabyShop_Interface/image/product/{{$newf->image}}" alt="" height="300px"></a>
                                         </div>
                                         <div class="single-item-body">
                                             <p class="single-item-title"><b>{{$newf->name}}</b></p>

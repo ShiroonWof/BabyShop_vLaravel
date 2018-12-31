@@ -29,7 +29,7 @@ Route::get('loaiSP/{type}',[
     'uses'=>'PageController@getLoaiSP'
 ]);
 
-Route::get('sanpham',[
+Route::get('sanpham/{id}',[
     'as'=>'chi-tiet-san-pham',
     'uses'=>'PageController@getSP'
 ]);
