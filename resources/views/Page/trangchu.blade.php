@@ -49,10 +49,10 @@
                                         <p class="single-item-title"><b>{{$new->name}}</b></p>
                                         <p class="single-item-price">
                                             @if($new->promotion_price != 0)
-                                                <span class="flash-del">{{$new->unit_price}}vnđ</span>
-                                                <span class="flash-sale">{{$new->promotion_price}}vnđ</span>
+                                                <span class="flash-del">{{number_format($new->unit_price)}}vnđ</span>
+                                                <span class="flash-sale">{{number_format($new->promotion_price)}}vnđ</span>
                                             @else
-                                                <span class="flash">{{$new->unit_price}}vnđ</span>
+                                                <span class="flash">{{number_format($new->unit_price)}}vnđ</span>
                                             @endif
                                         </p>
                                     </div>
@@ -65,6 +65,7 @@
                             </div>
                             @endforeach
                         </div>
+                        <div class="row">{{$new_product_toy->links()}}</div>
                     </div> <!-- .beta-products-list -->
 
                     <div class="space50">&nbsp;</div>
@@ -89,10 +90,10 @@
                                             <p class="single-item-title"><b>{{$newf->name}}</b></p>
                                             <p class="single-item-price">
                                                 @if($newf->promotion_price != 0)
-                                                    <span class="flash-del">{{$newf->unit_price}}vnđ</span>
-                                                    <span class="flash-sale">{{$newf->promotion_price}}vnđ</span>
+                                                    <span class="flash-del">{{number_format($newf->unit_price)}}vnđ</span>
+                                                    <span class="flash-sale">{{number_format($newf->promotion_price)}}vnđ</span>
                                                 @else
-                                                    <span class="flash">{{$newf->unit_price}}vnđ</span>
+                                                    <span class="flash">{{number_format($newf->unit_price)}}vnđ</span>
                                                 @endif
                                             </p>
                                         </div>
@@ -105,6 +106,7 @@
                                 </div>
                             @endforeach
                         </div>
+                        <div class="row">{{$new_product_toy->links()}}</div>
                         <div class="space40">&nbsp;</div>
                     </div> <!-- .beta-products-list -->
                 </div>

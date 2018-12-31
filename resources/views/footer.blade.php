@@ -49,10 +49,10 @@
     <div class="container">
         <p class="pull-left">Privacy policy. (&copy;) 2018</p>
         <p class="pull-right pay-options">
-            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/1aMasterCard.jpg" alt="" /></a>
-            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/pay1.jpg" alt="" /></a>
-            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/visa1.jpg" alt="" /></a>
-            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/paypal1.jpg" alt="" /></a>
+            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/1aMasterCard.jpg" alt="" height="20px" width="30px" /></a>
+            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/pay1.jpg" alt="" height="20px" width="30px"/></a>
+            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/visa1.jpg" alt="" height="20px" width="30px"/></a>
+            <a href="#"><img src="BabyShop_Interface/assets/dest/images/pay/paypal1.jpg" alt="" height="20px" width="30px"/></a>
         </p>
         <div class="clearfix"></div>
     </div> <!-- .container -->

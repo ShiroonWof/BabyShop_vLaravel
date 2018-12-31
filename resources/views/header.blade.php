@@ -96,16 +96,16 @@
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu">
                 <ul class="l-inline ov">
-                    <li><a href="index">Trang chủ</a></li>
+                    <li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
                     <li><a href="loaiSP">Sản phẩm</a>
                         <ul class="sub-menu">
-                            <li><a href="loaiSP">Sản phẩm 1</a></li>
-                            <li><a href="loaiSP">Sản phẩm 2</a></li>
-                            <li><a href="loaiSP">Sản phẩm 3</a></li>
+                            @foreach($loai_sp as $loaiSP)
+                            <li><a href="{{route('loai-san-pham',$loaiSP->id)}}">{{$loaiSP->name}}</a></li>
+                                @endforeach
                         </ul>
                     </li>
-                    <li><a href="gioithieu">Giới thiệu</a></li>
-                    <li><a href="lienhe">Liên hệ</a></li>
+                    <li><a href="{{route('gioi-thieu')}}">Giới thiệu</a></li>
+                    <li><a href="{{route('lien-he')}}">Liên hệ</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </nav>
