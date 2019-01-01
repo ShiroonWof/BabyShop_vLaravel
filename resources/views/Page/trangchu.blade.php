@@ -57,8 +57,8 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="add-to-cart pull-left" href="{{route('them-vao-gio-hang',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$new->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -98,8 +98,8 @@
                                             </p>
                                         </div>
                                         <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="shopping_cart"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="beta-btn primary" href="product">Details <i class="fa fa-chevron-right"></i></a>
+                                            <a class="add-to-cart pull-left" href="{{route('them-vao-gio-hang',$newf->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="beta-btn primary" href="{{route('chi-tiet-san-pham',$newf->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>

@@ -38,44 +38,27 @@
                 </div>
 
                 <div class="beta-comp">
+
                     <div class="cart">
-                        <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
+                        <div class="beta-select"><i class="fa fa-shopping-cart">
+                            </i>Giỏ hàng (@if(Session::has('cart')){{Session('cart')->totalQty}}@else Trống @endif) <i class="fa fa-chevron-down"></i></div>
                         <div class="beta-dropdown cart-body">
+                            @if(Session::has('cart'))
+                            @foreach($product_cart as $product)
                             <div class="cart-item">
+                                <a class="cart-item-delete" href="{{route('xoa-gio-hang',$product['item']['id'])}}"><i class="fa fa-times"></i></a>
                                 <div class="media">
-                                    <a class="pull-left" href="#"><img src="BabyShop_Interface/assets/dest/images/products/cart/1.png" alt=""></a>
+                                    <a class="pull-left" href="{{route('chi-tiet-san-pham',$product['item']['id'])}}"><img src="BabyShop_Interface/image/product/{{$product['item']['image']}}" alt=""></a>
                                     <div class="media-body">
-                                        <span class="cart-item-title">Sample Woman Top</span>
+                                        <span class="cart-item-title">{{$product['item']['name']}}</span>
                                         <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                                        <span class="cart-item-amount">1*<span>$49.50</span></span>
+                                        <span class="cart-item-amount">{{$product['qty']}}*<span>@if($product['item']['promotion_price']==0){{number_format($product['item']['unit_price'])}}@else {{number_format($product['item']['promotion_price'])}} @endif vnđ</span></span>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="cart-item">
-                                <div class="media">
-                                    <a class="pull-left" href="#"><img src="BabyShop_Interface/assets/dest/images/products/cart/2.png" alt=""></a>
-                                    <div class="media-body">
-                                        <span class="cart-item-title">Sample Woman Top</span>
-                                        <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                                        <span class="cart-item-amount">1*<span>$49.50</span></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="cart-item">
-                                <div class="media">
-                                    <a class="pull-left" href="#"><img src="BabyShop_Interface/assets/dest/images/products/cart/3.png" alt=""></a>
-                                    <div class="media-body">
-                                        <span class="cart-item-title">Sample Woman Top</span>
-                                        <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                                        <span class="cart-item-amount">1*<span>$49.50</span></span>
-                                    </div>
-                                </div>
-                            </div>
-
+                                @endforeach
                             <div class="cart-caption">
-                                <div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">$34.55</span></div>
+                                <div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">{{number_format(Session('cart')->totalPrice)}}vnđ</span></div>
                                 <div class="clearfix"></div>
 
                                 <div class="center">
@@ -83,6 +66,7 @@
                                     <a href="checkout" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>
+                                @endif
                         </div>
                     </div> <!-- .cart -->
                 </div>

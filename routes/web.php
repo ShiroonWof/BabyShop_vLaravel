@@ -43,3 +43,13 @@ Route::get('gioithieu',[
     'as'=>'gioi-thieu',
     'uses'=>'PageController@getGioiThieu'
 ]);
+
+Route::get('themvaogiohang/{id}',[
+    'as'=>'them-vao-gio-hang',
+    'uses'=>'Pagecontroller@getThemVaoGioHang'
+]);
+
+Route::get('xoagiohang/{id}',[
+    'as'=>'xoa-gio-hang',
+    'uses'=>'Pagecontroller@getXoaGioHang'
+]);
