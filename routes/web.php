@@ -63,3 +63,18 @@ Route::post('dathang',[
     'as'=>'dat-hang',
     'uses'=>'Pagecontroller@postDatHang'
 ]);
+
+Route::get('dangnhap',[
+    'as'=>'dang-nhap',
+    'uses'=>'Pagecontroller@getDangNhap'
+]);
+
+Route::get('dangki',[
+    'as'=>'dang-ki',
+    'uses'=>'Pagecontroller@getDangKi'
+]);
+
+Route::post('dangki',[
+    'as'=>'dang-ki',
+    'uses'=>'Pagecontroller@postDangKi'
+]);
