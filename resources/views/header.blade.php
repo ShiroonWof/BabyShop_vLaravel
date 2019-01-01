@@ -26,7 +26,7 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="index" id="logo"><img src="BabyShop_Interface/assets/dest/images/logo-shop.png" width="400px" alt=""></a>
+                <a href="index" id="logo"><img src="BabyShop_Interface/assets/dest/images/logo-shop.png" width="300px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
@@ -63,7 +63,7 @@
 
                                 <div class="center">
                                     <div class="space10">&nbsp;</div>
-                                    <a href="checkout" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+                                    <a href="{{route('dat-hang')}}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>
                                 @endif

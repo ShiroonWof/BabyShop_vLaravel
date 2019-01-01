@@ -5,6 +5,9 @@ use App\slide;
 use App\product;
 use App\productType;
 use App\cart;
+use App\customer;
+use App\bill;
+use App\billdetail;
 use Session;
 
 use Illuminate\Http\Request;
@@ -62,6 +65,42 @@ class PageController extends Controller
         else
             Session::forget('cart');
         return redirect()->back();
+    }
+
+    public function getDatHang(){
+        return view("page/dathang");
+    }
+
+    public function postDatHang(Request $req){
+        $cart = Session::get('cart');
+
+        $customer = new Customer;
+        $customer->name = $req->name;
+        $customer->gender = $req->gender;
+        $customer->email = $req->email;
+        $customer->address = $req->address;
+        $customer->phone_number = $req->phone;
+        $customer->note = $req->note;
+        $customer->save();
+
+        $bill = new Bill();
+        $bill->id_customer = $customer->id;
+        $bill->date_order = date('Y-m-d');
+        $bill->total = $cart->totalPrice;
+        $bill->payment = $req->payment_method;
+        $bill->note = $req->note;
+        $bill->save();
+
+        foreach($cart->items as $key=>$value) {
+            $bill_detail = new BillDetail();
+            $bill_detail->id_bill = $bill->id;
+            $bill_detail->id_product = $key;
+            $bill_detail->quantity = $value['qty'];
+            $bill_detail->unit_price = ($value['price']/$value['qty']);
+            $bill_detail->save();
+        }
+        Session::forget('cart');
+        return redirect()->back()->with('thong-bao','Đơn hàng của bạn đã được đặt thành công !');
     }
 }
 

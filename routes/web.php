@@ -53,3 +53,13 @@ Route::get('xoagiohang/{id}',[
     'as'=>'xoa-gio-hang',
     'uses'=>'Pagecontroller@getXoaGioHang'
 ]);
+
+Route::get('dathang',[
+    'as'=>'dat-hang',
+    'uses'=>'Pagecontroller@getDatHang'
+]);
+
+Route::post('dathang',[
+    'as'=>'dat-hang',
+    'uses'=>'Pagecontroller@postDatHang'
+]);
