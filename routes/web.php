@@ -88,3 +88,13 @@ Route::get('dangxuat',[
     'as'=>'dang-xuat',
     'uses'=>'Pagecontroller@getDangXuat'
 ]);
+
+Route::get('timkiem',[
+    'as'=>'tim-kiem',
+    'uses'=>'Pagecontroller@getTimKiem'
+]);
+
+Route::get('thongtin',[
+    'as'=>'thong-tin',
+    'uses'=>'Pagecontroller@getThongTin'
+]);

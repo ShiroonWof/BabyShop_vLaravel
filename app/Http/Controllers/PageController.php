@@ -107,7 +107,7 @@ class PageController extends Controller
     }
 
     public function getDangNhap(){
-        return view("page.dangnhap");
+        return view("page/dangnhap");
     }
 
     public function postDangNhap(Request $req){
@@ -164,6 +164,15 @@ class PageController extends Controller
     public function getDangXuat(){
         Auth::logout();
         return redirect()->route('trang-chu');
+    }
+
+    public function getTimKiem(Request $req){
+        $product = Product::where('name','like','%'.$req->timkiem.'%')->orwhere('unit_price',$req->timkiem)->get();
+        return view('page/search',compact('product'));
+    }
+
+    public function getThongTin(){
+        return view('page/thongtin');
     }
 }
 

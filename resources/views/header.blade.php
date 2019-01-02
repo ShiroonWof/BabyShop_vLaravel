@@ -9,18 +9,17 @@
         <div class="container">
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
-                    <li><a href=""><i class="fa fa-home"></i> 227, Nguyễn Văn Cừ, Phường 4, Quận 5, TP.HCM</a></li>
-                    <li><a href=""><i class="fa fa-phone"></i> 0909 123 456</a></li>
+                    <li><a href="{{route('lien-he')}}"><i class="fa fa-home"></i> 227, Nguyễn Văn Cừ, Phường 4, Quận 5, TP.HCM</a></li>
+                    <li><a href="{{route('lien-he')}}"><i class="fa fa-phone"></i> 0909 123 456</a></li>
                 </ul>
             </div>
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
                     @if(!Auth::check())
-                        <li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
                         <li><a href="{{route('dang-ki')}}">Đăng kí</a></li>
                         <li><a href="{{route('dang-nhap')}}">Đăng nhập</a></li>
                     @else
-                        <li><a href="{{route('dang-nhap')}}">Chào bạn {{Auth::user()->full_name}}</a></li>
+                        <li><a class="fa fa-user" href="{{route('thong-tin')}}"> Chào bạn {{Auth::user()->full_name}}</a></li>
                         <li><a href="{{route('dang-xuat')}}">Đăng xuất</a></li>
                     @endif
                 </ul>
@@ -36,8 +35,8 @@
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp">
-                    <form role="search" method="get" id="searchform" action="/">
-                        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
+                    <form role="search" method="get" id="searchform" action="{{route('tim-kiem')}}">
+                        <input type="text" value="" name="timkiem" id="s" placeholder="Nhập từ khóa..." />
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                     </form>
                 </div>
