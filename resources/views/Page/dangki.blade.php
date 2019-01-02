@@ -48,7 +48,7 @@
 
                     <div class="form-block">
                         <label for="adress">Địa chỉ*</label>
-                        <input type="text" style="border-style:groove" name="adress" required placeholder="227, Nguyễn Văn Cừ, Phường 4, Quận 5, TP.HCM">
+                        <input type="text" style="border-style:groove" name="address" required placeholder="227, Nguyễn Văn Cừ, Phường 4, Quận 5, TP.HCM">
                     </div>
                     <div class="form-block">
                         <label for="phone">Số điện thoại*</label>
