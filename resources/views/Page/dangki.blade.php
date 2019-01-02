@@ -38,7 +38,7 @@
 
                     <div class="form-block">
                         <label for="email">Email*</label>
-                        <input type="email" style="border-style:groove" name="email" required placeholder="abc@gmail.com">
+                        <input type="text" style="border-style:groove" name="email" required placeholder="abc@gmail.com">
                     </div>
 
                     <div class="form-block">

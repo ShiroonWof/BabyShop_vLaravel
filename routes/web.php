@@ -69,6 +69,11 @@ Route::get('dangnhap',[
     'uses'=>'Pagecontroller@getDangNhap'
 ]);
 
+Route::post('dangnhap',[
+    'as'=>'dang-nhap',
+    'uses'=>'Pagecontroller@postDangNhap'
+]);
+
 Route::get('dangki',[
     'as'=>'dang-ki',
     'uses'=>'Pagecontroller@getDangKi'
@@ -78,3 +83,4 @@ Route::post('dangki',[
     'as'=>'dang-ki',
     'uses'=>'Pagecontroller@postDangKi'
 ]);
+

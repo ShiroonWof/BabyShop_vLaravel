@@ -21,6 +21,9 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="row">
                 <div class="col-sm-6">
+                    @if(Session::has('thong-bao'))
+                        <div class="alert alert-success">{{Session::get('thong-bao')}}</div>
+                    @endif
                     <h4>Đặt hàng</h4>
                     <div class="space20">&nbsp;</div>
 
@@ -113,7 +116,7 @@
                             </ul>
                         </div>
                         @if(Session::has('cart'))
-                            <div class="text-center"><button type="submit" class="beta-btn primary" href="index" onclick="alert('Đơn hàng của bạn đã được đặt. Cảm ơn quý khách đã mua hàng tại BabyShop');">Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
+                            <div class="text-center"><button type="submit" class="beta-btn primary" href="index">Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
                         @else
                             <div class="text-center"><button type="submit" class="beta-btn primary" disabled="true" href="index">Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
                         @endif

@@ -11,6 +11,7 @@ use App\billdetail;
 use App\user;
 use Session;
 use Hash;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -106,7 +107,28 @@ class PageController extends Controller
     }
 
     public function getDangNhap(){
-        return view("page/dangnhap");
+        return view("page.dangnhap");
+    }
+
+    public function postDangNhap(Request $req){
+        $this->validate($req,
+            [
+                'email'=>"required|email",
+                'password'=>'required|min:6'
+            ],
+            [
+                'email.required'=>'Vui lòng nhập vào email.',
+                'email.email'=>'Email không đúng định dạng.',
+                'password.required'=>'Vui lòng nhập vào mật khẩu.',
+                'password.min'=>'Mật khẩu ít nhất 6 kí tự.'
+            ]);
+        $credentials = array('email'=>$req->email,'password'=>$req->password);
+        if(Auth::attempt($credentials)) {
+            return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công.']);
+        }
+        else {
+            return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng nhập thất bại.']);
+        }
     }
 
     public function getDangKi(){
@@ -117,7 +139,7 @@ class PageController extends Controller
         $this->validate($req,
             [
                 'email'=>'required|email|unique:users,email',
-                'password'=>'required|min:6|max:20',
+                'password'=>'required|min:6',
                 'fullname'=>'required',
                 're_password'=>'required|same:password'
             ],
