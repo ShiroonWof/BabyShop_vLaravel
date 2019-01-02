@@ -36,8 +36,11 @@
                         <input style="border-style:groove" name="password" type="password" id="password" required>
                     </div>
                     <div class="form-block">
-                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                        <button style="margin-left: 58%" type="submit" class="btn btn-primary">Đăng nhập</button>
                     </div>
+                        <div>
+                            <a style="color:blue; margin-left: 57%;" href="{{route('dang-ki')}}">Chưa có tài khoản.</a>
+                        </div>
                 </div>
                 <div class="col-sm-3"></div>
             </div>

@@ -84,3 +84,7 @@ Route::post('dangki',[
     'uses'=>'Pagecontroller@postDangKi'
 ]);
 
+Route::get('dangxuat',[
+    'as'=>'dang-xuat',
+    'uses'=>'Pagecontroller@getDangXuat'
+]);

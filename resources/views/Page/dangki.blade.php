@@ -65,8 +65,12 @@
                     <div class="form-block">
                         <button style="margin-left: 40%;" type="submit" class="btn btn-primary">Đăng kí</button>
                     </div>
+                    <div>
+                        <a style="color:blue; margin-left: 38%;" href="{{route('dang-nhap')}}">Đã có tài khoản.</a>
+                    </div>
                 </div>
                 <div class="col-sm-3"></div>
+
             </div>
         </form>
     </div> <!-- #content -->

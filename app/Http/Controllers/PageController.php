@@ -124,7 +124,7 @@ class PageController extends Controller
             ]);
         $credentials = array('email'=>$req->email,'password'=>$req->password);
         if(Auth::attempt($credentials)) {
-            return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công.']);
+            return redirect()->route('trang-chu')->with(['flag'=>'success','message'=>'Đăng nhập thành công.']);
         }
         else {
             return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng nhập thất bại.']);
@@ -159,6 +159,11 @@ class PageController extends Controller
         $user->address = $req->address;
         $user->save();
         return redirect()->back()->with('thanh-cong','Tài khoản đã được tạo thành công.');
+    }
+
+    public function getDangXuat(){
+        Auth::logout();
+        return redirect()->route('trang-chu');
     }
 }
 
