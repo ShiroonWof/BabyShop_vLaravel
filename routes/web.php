@@ -98,3 +98,39 @@ Route::get('thongtin',[
     'as'=>'thong-tin',
     'uses'=>'Pagecontroller@getThongTin'
 ]);
+
+Route::get('admin', function () {
+        return view('admin/layout/index');
+});
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'category'],function(){
+        Route::get('list','Pagecontroller@getCaList');
+        Route::get('edit/{id}','Pagecontroller@getCaEdit');
+        Route::post('edit/{id}','Pagecontroller@postCaEdit');
+        Route::get('add','Pagecontroller@getCaAdd');
+        Route::post('add','Pagecontroller@postCaAdd');
+        Route::get('delete/{id}','Pagecontroller@getCaDelete');
+    });
+});
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'product'],function(){
+        Route::get('list','Pagecontroller@getPrList');
+        Route::get('edit/{id}','Pagecontroller@getPrEdit');
+        Route::post('edit/{id}','Pagecontroller@postPrEdit');
+        Route::get('add','Pagecontroller@getPrAdd');
+        Route::post('add','Pagecontroller@postPrAdd');
+        Route::get('delete/{id}','Pagecontroller@getPrDelete');
+    });
+});
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'user'],function(){
+        Route::get('list','Pagecontroller@getUsList');
+        Route::get('add/{id}','Pagecontroller@getAddAdmin');
+    });
+});
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'admin'],function(){
+        Route::get('list','Pagecontroller@getAdList');
+        Route::get('delete/{id}','Pagecontroller@getDelAdmin');
+    });
+});
